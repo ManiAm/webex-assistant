@@ -1,0 +1,15 @@
+
+services:
+  webex-bot:
+    build: .
+    hostname: webex-assistant
+    container_name: webex-assistant
+    restart: unless-stopped
+    volumes:
+      - ./src:/app
+    networks:
+      - webex-net
+
+networks:
+  webex-net:
+    driver: bridge
